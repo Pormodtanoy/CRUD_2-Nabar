@@ -1,0 +1,98 @@
+//** วิธีใส่ล็อกอินใน Nabar
+//**ส่วนของ Login */
+
+ function AddRecord(username) {
+  var url = 'https://docs.google.com/spreadsheets/d/1xsg4rv8c04qLif1WG3qd9JTfEzssDLBYQQvYVxDk9Ew/edit#gid=185892609';
+  var ss= SpreadsheetApp.openByUrl(url);
+  var webAppSheet = ss.getSheetByName("Sheet1");
+  webAppSheet.appendRow([new Date(),username]);
+  } 
+function checkLogin(username, password) {
+  var url = 'https://docs.google.com/spreadsheets/d/1xsg4rv8c04qLif1WG3qd9JTfEzssDLBYQQvYVxDk9Ew/edit#gid=1080427991';
+  var ss= SpreadsheetApp.openByUrl(url);
+  var webAppSheet = ss.getSheetByName("Sheet2");
+  var getLastRow =  webAppSheet.getLastRow();
+  var found_record = '';
+  for(var i = 1; i <= getLastRow; i++)
+  {
+   if(webAppSheet.getRange(i, 1).getValue().toUpperCase() == username.toUpperCase() && 
+     webAppSheet.getRange(i, 2).getValue().toUpperCase() == password.toUpperCase())
+   {
+     found_record = 'TRUE';
+   }    
+  }
+  if(found_record == '')
+  {
+    found_record = 'FALSE'; 
+  }
+  
+  return found_record;
+  
+}
+//** จบส่วนของ Login */
+
+
+
+//** ส่วนของ Index
+
+<div class="card-body" id="formx5" style="display:none">
+        <div class="row">
+          <div class="col">
+            <script>
+              function AddRow()
+              {       
+                google.script.run.AddRecord();           
+              }
+            </script>
+            <script>
+              function LoginUser()
+              {
+              var username = document.getElementById("username").value;
+              var password = document.getElementById("password").value;
+              
+            google.script.run.AddRecord(username) 
+                  document.getElementById("username").value = '';            
+              google.script.run.withSuccessHandler(function(output) 
+              {
+                if(output == 'TRUE')
+                {
+                  document.getElementById("loginDisplay").style.display = "none";
+                  document.getElementById("dataDisplay").style.display = "block";     
+                }
+                else if(output == 'FALSE')
+                {
+                  document.getElementById("errorMessage").innerHTML = "Failed to Login";     
+                }    
+              }).checkLogin(username, password);
+              }
+            </script>
+            <center>
+              <h5 style="color:green">ตรวจสอบฐานข้อมูลนักศึกษาหลักสูตรเภสัชศาสตรมหาบัณฑิตสาขาสารสนเทศศาสตร์ทางสุขภาพ
+              </h5>
+              <div class="col-md-6" style="background-color:#f4f4f4">
+                <div id="loginDisplay">
+                  <label><i class="fas fa-address-card"></i> ลงชื่อเข้าใช้</label><br>
+                  <input type="text" id="username" /><br>
+                  <label><i class="fas fa-user-lock"></i> รหัสผ่าน</label><br>
+                  <input type="password" id="password" /></br></br>
+                  <input type="button"class="btn btn-primary btn-sm" value="เข้าสู่ระบบ" onclick="LoginUser()" /><br>
+                  <span id="errorMessage" style="color: red" ></span>
+                </div>
+              </div>
+
+            </center>
+            <hr>
+            <div style="display:none" id="dataDisplay">
+              <center><br>
+                <div>
+                  <label></label><br>
+                </div>
+                <br>
+                <center><iframe
+                    src="xxxxxx?embedded=true" //* ใส่ลิงก์ที่ต้องการเปิดเมื่อเข้ารหัส
+                    width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                </center>
+            </div>
+          </div>
+        </div>
+      </div>
