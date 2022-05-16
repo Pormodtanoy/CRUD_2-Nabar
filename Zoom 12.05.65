@@ -124,57 +124,44 @@ function getFieldFromData(field, data) {
             data-whatever="@fat">xxxxxxxxxxxxxxxx</a>
         </li>
 ---------------------------------------------------------------
-//** 3. ติดตั้ง Forme (Modal) และวาง Script
+//** 3. ติดตั้ง Form (Modal) และวาง Script
 
-<div class="page-content page-container" id="page-content">
-  <div class="padding">
-    <div class="row container d-flex justify-content-center">
-      <div class="modal fade" id="exampleModal-4" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-        aria-hidden="true" style="display: none;">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <form class="gform pure-form pure-form-stacked" method="POST" data-email="pormodtanoy@gmail.com"
-              action="https://script.google.com/macros/s/AKfycbz59ZGn1bgZ10Mj7FChqZF_gdYYRWRwtA7m9JznD-tqtEqxz5tOIP1b0SAlT8FUgw4AJA/exec">
-              <div class="form-elements"><br>
-                <div
-                  style="background:none;border:px solid gray;border-radius: 50px;width: 400px;padding-top: 10px;padding-bottom: 35px;padding-left: 15px;padding-right: 15px;">
-                  <br>
-                  <button type="button" class="btn btn-primary active"> ติดต่อสอบถาม : ฟอร์มสำหรับติดต่อเลขานุการหลักสูตรตลอดเวลา</button>
-                  <!-- <button type="button" class="btn btn-outline-primary">ฟอร์มสำหรับติดต่อเลขานุการหลักสูตร</button> -->
-                  <!-- <center><b class="content-head" style="font-size: 1.5em;">ฟอร์มสำหรับติดต่อเลขานุการหลักสูตร</b></center> -->
-                  <br><br>
-                  <b style="margin-left: 2px;font-size: 1.0em;">ชื่อ สกุล</b><br>
-                  <input type="text" name="ชื่อ สกุล" required="" style="font-size: 1em;width: 470px;"/><br><br>
-
-                  <b style="margin-left: 2px;font-size: 1.0em;">อีเมล</b><br>
-                  <input type="email" name="อีเมล" required="" style="font-size: 1em;width: 470px;"/><br><br>
-
-                  <b style="margin-left: 2px;font-size: 1.0em;">เบอร์โทร</b><br>
-                  <input type="number"  name="เบอร์โทร" required="" style="font-size: 1em;width: 470px;"/><br><br>
-
-                  <b style="margin-left: 2px;font-size: 1.0em;">ข้อความ | ระบุ ID Line จะติดต่อได้รวดเร็วขึ้น</b><br>
-                  <textarea  name="ข้อความ" rows="5" cols="22" required="" style="font-size: 1.0em;width: 470px;"></textarea><br><br>
-
-                  <button class="btn btn-success" style="float: right;width: 100px;height: 40px;font-size: 1.em;margin-right: 65px;"><i class="fas fa-arrow-alt-circle-up"></i> กดส่ง</button><br>
-                </div>
-              </div>
-
-              <!-- Thankyou_message --><br>
-              <div class="thankyou_message"
-                style="display:none;background:none;border:0px solid gray;border-radius: 40px;width: 400px;padding-top: 15px;padding-bottom: 40px;padding-left: 20px;padding-right: 20px;">
-                <br><br>
-                <h1>ขอบคุณ.ที่ติดต่อเรา!</h1>
-                <h1>จักติดต่อกลับไปทันทีครับ</h1>
-              </div>
-            </form>
-            <button type="button" class="btn btn-danger" data-dismiss="modal">&nbsp; &nbsp; &nbsp;<i class="fas fa-power-off"></i> ปิด</button>
+<div class="modal" id="modal3">
+  <div class="modal__wrapper">
+    <div class="modal-content">
+      <form class="gform pure-form pure-form-stacked" method="POST" data-email="udom.tanong@gmail.com"
+        action="https://script.google.com/macros/s/AKfycbzgbNonYRqkAx8QacEpxcLpCUeB7qaLmvZ2p319EaRfAaSn3I-hN1WmpaFoBFnRx_b3/exec">
+        <div class="form-elements"><br>
+          <div
+            style="background:none;border:px solid gray;border-radius: 50px;width: 460px;padding-top: 10px;padding-bottom: 10px;padding-left: 10px;padding-right: 15px;">
+          
+            <button type="button" class="btn btn-primary active"> ติดต่อสอบถาม : ฟอร์มติดต่อเลขานุการหลักสูตร</button>
+            <!-- <button type="button" class="btn btn-outline-primary">ฟอร์มสำหรับติดต่อเลขานุการหลักสูตร</button> -->
+            <!-- <center><b class="content-head" style="font-size: 1.5em;">ฟอร์มสำหรับติดต่อเลขานุการหลักสูตร</b></center> -->
+            <br><br>
+            <b style="margin-left: 2px;font-size: 1.2em;">ชื่อ สกุล</b><br>
+            <input type="text" name="ชื่อ สกุล" required="" style="font-size: 1em;width: 430px;"/><br>
+            <b style="margin-left: 2px;font-size: 1.2em;">อีเมล</b><br>
+            <input type="email" name="อีเมล" required="" style="font-size: 1em;width: 430px;"/><br>
+            <b style="margin-left: 2px;font-size: 1.2em;">เบอร์โทร</b><br>
+            <input type="number"  name="เบอร์โทร" required="" style="font-size: 1em;width: 430px;"/><br>
+            <b style="margin-left: 2px;font-size: 1.2em;">ข้อความ | ระบุ ID Line จะติดต่อได้รวดเร็วขึ้น</b>
+            <textarea  name="ข้อความ" rows="5" cols="22" required="" style="font-size: 1.0em;width: 430px;"></textarea><br>
+            <button class="btn btn-success" style="float: right;width: 100px;height: 40px;font-size: 1.em;margin-right: 65px;"><i class="fas fa-arrow-alt-circle-up"></i> กดส่ง</button><br>
           </div>
         </div>
-      </div>
+
+        <!-- Thankyou_message --><br>
+        <div class="thankyou_message"
+          style="display:none;background:none;border:0px solid gray;border-radius: 40px;width: 400px;padding-top: 15px;padding-bottom: 40px;padding-left: 20px;padding-right: 20px;">
+          <br><br>
+          <h1>ขอบคุณ.ที่ติดต่อเรา!</h1>
+          <h1>จักติดต่อกลับไปทันทีครับ</h1>
+        </div>
+      </form>
     </div>
   </div>
 </div>
-
 
 <script data-cfasync="false" type="text/javascript">
   (function() {
